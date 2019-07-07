@@ -32,7 +32,7 @@ npm install ask-cli -g
 ```
 
 ### Setup
-AWS Account - Create an IAM User for the Serverless Framework that only has Programmatic access. I use `serverless.dev` with `dev` representing the specific environment. The full instructions can be found [here.](https://serverless.com/framework/docs/providers/aws/guide/credentials)
+AWS Account - Create an IAM User for the Serverless Framework that only has Programmatic access. The full instructions can be found [here.](https://serverless.com/framework/docs/providers/aws/guide/credentials)
 
 ASK CLI - To start using ask-cli, you need to initialize it: 
  ```

@@ -38,4 +38,36 @@ ASK CLI - To start using ask-cli, you need to initialize it:
  ```
  ask init
  ```
- This allows ASK to connect to your Alexa Developer account for creating/updating the skill and use a predefined AWS profile. More details [here](https://developer.amazon.com/docs/smapi/manage-credentials-with-ask-cli.html#ask-init) 
+ This allows ASK to connect to your Alexa Developer account for creating/updating the skill and use a predefined AWS profile. More details [here](https://developer.amazon.com/docs/smapi/manage-credentials-with-ask-cli.html#ask-init)
+  
+### Alexa Skill
+Deploy the Alexa boilerplate skill to create a Skill Id.
+
+```
+ask deploy
+```
+
+Copy the `Skill Id:` value from the terminal output or check the `.ask/config` file for the skill id.
+
+### Serverless
+
+Open `lambda\custom\serverless.yml` and replace the SKILL-ID with the copied Skill Id.
+
+Provision the AWS resources:
+```
+sls deploy
+```
+
+Copy the function ARN from the Management Console and update the `.ask/config` file with 
+```
+"custom": {
+    "endpoint": {
+        "uri": "arn:aws:lambda:us-east-1:ABC:function:XYZ"
+    }
+}
+```
+
+Update the Alexa skill
+```
+ask deploy -t skill
+```
